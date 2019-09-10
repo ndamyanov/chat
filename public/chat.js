@@ -1,6 +1,7 @@
 
 $(function(){
-	var socket = io.connect('http://localhost:5000');
+    var port = process.env.PORT || 3000;
+	var socket = io.connect('http://localhost:' + port);
 	
 	var message = $('#message')
 	var username = $('#username')
