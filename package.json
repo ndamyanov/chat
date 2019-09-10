@@ -5,7 +5,7 @@
   "main": "node_test.js",
   "scripts": {
     "test": "testnode",
-    "start": "nodemon app"
+    "start": "node_test"
   },
   "author": "niki",
   "license": "ISC",
@@ -14,5 +14,8 @@
     "express": "^4.17.1",
     "nodemon": "^1.19.1",
     "socket.io": "^2.2.0"
+  },
+  "engines": {
+    "node": "10.16.0"
   }
 }
