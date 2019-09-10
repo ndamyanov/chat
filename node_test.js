@@ -13,10 +13,12 @@ const io = require('socket.io')(server);
 
 io.on('connection', (socket) => {
 	console.log('new user connected')
-	socket.username = 'Anonymous'
+    socket.username = 'Anonymous'
+    socket.userimage = 'https://png.pngtree.com/png-clipart/20190516/original/pngtree-users-vector-icon-png-image_3725294.jpg'
 	
 	socket.on('change_username', (data) => {
-		socket.username = data.username
+        socket.username = data.username
+        io.sockets.emit('new_user_connected', {username: socket.username, userimage: socket.userimage})
 	})
 	
 	socket.on('change_userimage', (data) => {
